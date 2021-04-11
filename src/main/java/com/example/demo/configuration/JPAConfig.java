@@ -1,6 +1,5 @@
 package com.example.demo.configuration;
 
-import org.hibernate.jpa.boot.spi.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -30,7 +29,7 @@ public class JPAConfig {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder) {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
         entityManager.setDataSource(dataSource());
@@ -38,7 +37,6 @@ public class JPAConfig {
         entityManager.setJpaVendorAdapter(vendorAdapter);
 
         return entityManager;
-//        return entityManagerFactory.dataSource().;
     }
 
     @Bean
