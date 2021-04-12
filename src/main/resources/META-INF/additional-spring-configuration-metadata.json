@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "primary.datasource.jdbc-url",
+      "type": "java.lang.String",
+      "description": "主要的jdbc-url."
+    },
+    {
+      "name": "primary.datasource.username",
+      "type": "java.lang.String",
+      "description": "主要的db username."
+    },
+    {
+      "name": "primary.datasource.password",
+      "type": "java.lang.String",
+      "description": "主要的db password."
+    },
+    {
+      "name": "primary.datasource.driverClassName",
+      "type": "java.lang.String",
+      "description": "主要的db driver."
+    }
+  ]
+}
