@@ -1,6 +1,6 @@
 package com.example.demo.bo.baseBo;
 
-public class BaseOutputBo {
+public abstract class BaseOutputBo {
     private String errorMassage;
     private String errorCode;
     private boolean isSuccess;

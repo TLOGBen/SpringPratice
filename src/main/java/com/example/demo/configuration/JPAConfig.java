@@ -1,7 +1,6 @@
 package com.example.demo.configuration;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -17,19 +16,19 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.example.demo.dao.repository")
+@Qualifier("secondaryDatasource")
 public class JPAConfig {
+    final DataSource dataSource;
 
-    @Bean
-    @ConfigurationProperties(prefix = "primary.datasource")
-    public DataSource dataSource() {
-        return DataSourceBuilder.create().build();
+    public JPAConfig(DataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
-        entityManager.setDataSource(dataSource());
+        entityManager.setDataSource(dataSource);
         entityManager.setPackagesToScan("com.example.demo");
         entityManager.setJpaVendorAdapter(vendorAdapter);
 
@@ -44,3 +43,4 @@ public class JPAConfig {
         return txManager;
     }
 }
+

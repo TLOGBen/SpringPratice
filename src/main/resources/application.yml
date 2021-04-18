@@ -6,6 +6,13 @@ primary:
     password: oooo0000
     driverClassName: org.postgresql.Driver
 
+secondary:
+  datasource:
+    jdbcUrl: jdbc:postgresql://localhost:5432/test_1
+    username: postgres
+    password: oooo0000
+    driverClassName: org.postgresql.Driver
+
 # 不會在Controller上使用Hibernate，故而Disable
 spring.jpa.open-in-view: false
 

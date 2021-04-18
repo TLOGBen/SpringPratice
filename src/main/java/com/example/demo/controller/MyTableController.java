@@ -18,7 +18,7 @@ public class MyTableController {
     @Autowired
     private IMyTableFacade myTableFacade;
 
-    @Autowired(required = false)
+    @Autowired(required = true)
     public MyTableController(MyTableMapper mytablemapper) {
         this.mytablemapper = mytablemapper;
     }
