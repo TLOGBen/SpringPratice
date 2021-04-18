@@ -1,16 +1,16 @@
 package com.example.demo.facade.bo;
 
-import com.example.demo.bo.baseBo.BaseOutputBo;
-import com.example.demo.dao.entity.MyTable;
+import com.example.demo.businessModel.MytableBean;
+import com.example.demo.businessModel.baseBo.BaseOutputBo;
 
 public class QueryMyTableByNameOutput extends BaseOutputBo {
-    private MyTable myTable;
+    private MytableBean myTableBean;
 
-    public MyTable getMyTable() {
-        return myTable;
+    public MytableBean getMyTableBean() {
+        return myTableBean;
     }
 
-    public void setMyTable(MyTable myTable) {
-        this.myTable = myTable;
+    public void setMyTableBean(MytableBean myTableBean) {
+        this.myTableBean = myTableBean;
     }
 }

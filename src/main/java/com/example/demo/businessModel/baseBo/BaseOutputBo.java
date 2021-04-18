@@ -1,4 +1,4 @@
-package com.example.demo.bo.baseBo;
+package com.example.demo.businessModel.baseBo;
 
 public abstract class BaseOutputBo {
     private String errorMassage;

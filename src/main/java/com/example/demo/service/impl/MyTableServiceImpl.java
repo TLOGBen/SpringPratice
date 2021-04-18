@@ -21,8 +21,9 @@ public class MyTableServiceImpl implements IMyTableService {
         QueryMyTableByNameOutput output = new QueryMyTableByNameOutput();
         boolean goNext = true;
         String errMsg = null;
+
         // validate
-        if (input == null || !input.validateInputBo()) {
+        if (input == null || input.validateInputBo()) {
             goNext = false;
             errMsg = "缺乏必要參數";
         }
@@ -32,7 +33,6 @@ public class MyTableServiceImpl implements IMyTableService {
         if (goNext) {
             try {
                 myTable = myTableRepository.findByTableName(input.getName());
-                myTable.setName("bbbbb");
             } catch (Exception e) {
                 goNext = false;
                 errMsg = "查詢失敗: " + e;
@@ -46,7 +46,6 @@ public class MyTableServiceImpl implements IMyTableService {
             output.setSuccess(false);
             output.setErrorMassage(errMsg);
         }
-
 
         return output;
     }

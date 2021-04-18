@@ -1,6 +1,6 @@
 package com.example.demo.facade.bo;
 
-import com.example.demo.bo.baseBo.BaseInputBo;
+import com.example.demo.businessModel.baseBo.BaseInputBo;
 
 public class QueryMyTableByNameInput extends BaseInputBo {
     private String name;

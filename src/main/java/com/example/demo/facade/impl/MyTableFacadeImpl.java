@@ -1,5 +1,6 @@
 package com.example.demo.facade.impl;
 
+import com.example.demo.businessModel.MytableBean;
 import com.example.demo.dao.entity.MyTable;
 import com.example.demo.facade.IMyTableFacade;
 import com.example.demo.facade.bo.QueryMyTableByNameInput;
@@ -52,7 +53,7 @@ public class MyTableFacadeImpl implements IMyTableFacade {
 
         if (goNext) {
             output.setSuccess(true);
-            output.setMyTable(myTable);
+            output.setMyTableBean(transferToMyTableBean(myTable));
         } else {
             output.setSuccess(false);
             output.setErrorCode(errCode);
@@ -62,4 +63,14 @@ public class MyTableFacadeImpl implements IMyTableFacade {
         return output;
     }
 
+    private MytableBean transferToMyTableBean(MyTable entity) {
+        MytableBean bean = new MytableBean();
+
+        bean.setId(entity.getId());
+        bean.setTime(entity.getTime());
+        bean.setName(entity.getName());
+        bean.setValue(entity.getValue());
+
+        return bean;
+    }
 }

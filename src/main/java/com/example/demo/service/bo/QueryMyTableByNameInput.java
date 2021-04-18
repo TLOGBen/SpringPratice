@@ -1,13 +1,13 @@
 package com.example.demo.service.bo;
 
-import com.example.demo.bo.baseBo.BaseInputBo;
+import com.example.demo.businessModel.baseBo.BaseInputBo;
 
 public class QueryMyTableByNameInput extends BaseInputBo {
     private String name;
 
     @Override
     public boolean validateInputBo() {
-        return getName() != null;
+        return getName() == null;
     }
 
     public String getName() {
