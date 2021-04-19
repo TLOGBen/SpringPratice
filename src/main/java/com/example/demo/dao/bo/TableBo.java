@@ -1,18 +1,20 @@
-package com.example.demo.dao.entity;
+package com.example.demo.dao.bo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.UUID;
 
 @Entity
-@Table(name = "mytable")
-public class MyTable {
+public class TableBo {
     @Id
-    private UUID uuid;
-
     private Integer id;
+
+    @Column(name = "test_id")
+    private Integer testId;
+
+    @Column(name = "mytable_id")
+    private Integer mytableId;
+
+    private Integer val;
     private String name;
     private String value;
     private Timestamp time;
@@ -23,6 +25,30 @@ public class MyTable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getTestId() {
+        return testId;
+    }
+
+    public void setTestId(Integer testId) {
+        this.testId = testId;
+    }
+
+    public Integer getMytableId() {
+        return mytableId;
+    }
+
+    public void setMytableId(Integer mytableId) {
+        this.mytableId = mytableId;
+    }
+
+    public Integer getVal() {
+        return val;
+    }
+
+    public void setVal(Integer val) {
+        this.val = val;
     }
 
     public String getName() {
@@ -49,4 +75,3 @@ public class MyTable {
         this.time = time;
     }
 }
-

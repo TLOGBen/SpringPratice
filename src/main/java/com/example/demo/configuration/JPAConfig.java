@@ -10,7 +10,9 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 
 @Configuration
@@ -21,6 +23,7 @@ public class JPAConfig {
     final DataSource dataSource;
 
     public JPAConfig(DataSource dataSource) {
+        System.out.println(dataSource.hashCode());
         this.dataSource = dataSource;
     }
 
