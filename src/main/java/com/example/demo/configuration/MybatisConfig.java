@@ -14,10 +14,10 @@ import javax.sql.DataSource;
 @Configuration
 @MapperScan(basePackages = "com.example.demo.dao.mapper", sqlSessionTemplateRef = "SecondarySessionTemplate")
 public class MybatisConfig {
+
     final DataSource dataSource;
 
     public MybatisConfig(@Qualifier("SecondaryData") DataSource dataSource) {
-        System.out.println(dataSource.hashCode());
         this.dataSource = dataSource;
     }
 

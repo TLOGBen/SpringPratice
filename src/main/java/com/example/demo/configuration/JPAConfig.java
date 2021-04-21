@@ -20,10 +20,10 @@ import javax.sql.DataSource;
 @EnableJpaRepositories(basePackages = "com.example.demo.dao.repository")
 @Qualifier("secondaryDatasource")
 public class JPAConfig {
+
     final DataSource dataSource;
 
     public JPAConfig(DataSource dataSource) {
-        System.out.println(dataSource.hashCode());
         this.dataSource = dataSource;
     }
 

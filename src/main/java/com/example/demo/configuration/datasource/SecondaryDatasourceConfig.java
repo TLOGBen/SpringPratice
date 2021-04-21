@@ -13,7 +13,6 @@ public class SecondaryDatasourceConfig {
     @Bean("SecondaryData")
     @ConfigurationProperties("secondary.datasource")
     public DataSource dataSource() {
-        System.out.println("Secondary");
         return DataSourceBuilder.create().build();
     }
 }
